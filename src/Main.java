@@ -4,22 +4,15 @@ import Usuarios.*;
 public class Main {
     public static void main(String[] args) {
 
-        Usuario autor = new Usuario();
-        Usuario destinatario = new Usuario();
+        Usuario autor = new Usuario("Leo", "leo@gmail.com");
+        Usuario destinatario = new Usuario("Ale", "ale@gmail.com");
 
-        autor.setNome("Leonardo");
-        autor.setEmail("leo@gmail.com");
-        destinatario.setNome("Carlos");
-        destinatario.setEmail("carlos@gmail.com");
+        MensagemTexto mensagemTexto = new MensagemTexto("Olá, tudo bem?", destinatario, autor);
+        MensagemArquivo mensagemArquivo = new MensagemArquivo("Arquivo", "C:\\Users\\Leo\\Desktop\\Arquivo", destinatario, autor, "Olá, tudo bem?");
 
-        MensagemTexto msg = new MensagemTexto();
-
-        msg.setTexto("Oi, tudo bem?");
-
-        msg.setAutor(autor);
-        msg.setDestinatario(destinatario);
-
-        System.out.println(msg);
+        System.out.println(mensagemTexto);
+        System.out.println("");
+        System.out.println(mensagemArquivo);
 
     }
 }

@@ -2,33 +2,36 @@ package Mensagens;
 
 import Usuarios.Usuario;
 
-public class MensagemArquivo {
+public class MensagemArquivo extends Mensagem {
 
-    private String filename;
-    private Usuario destinatario;
-    private Usuario autor;
+    private String nomeArquivo;
+    private String caminhoArquivo;
+    
 
-    public String getFilename() {
-        return filename;
+    public MensagemArquivo(String nomeArquivo, String caminhoArquivo, Usuario destinatario, Usuario autor,  String texto) {
+        super(texto, destinatario, autor);
+        this.nomeArquivo = nomeArquivo;
+        this.caminhoArquivo = caminhoArquivo;
     }
 
-    public void setFilename(String filename) {
-        this.filename = filename;
+    public String getNomeArquivo() {
+        return nomeArquivo;
     }
 
-    public Usuario getDestinatario() {
-        return destinatario;
+    public void setNomeArquivo(String nomeArquivo) {
+        this.nomeArquivo = nomeArquivo;
     }
 
-    public void setDestinatario(Usuario destinatario) {
-        this.destinatario = destinatario;
+    public String getCaminhoArquivo() {
+        return caminhoArquivo;
     }
 
-    public Usuario getAutor() {
-        return autor;
+    public void setCaminhoArquivo(String caminhoArquivo) {
+        this.caminhoArquivo = caminhoArquivo;
     }
 
-    public void setAutor(Usuario autor) {
-        this.autor = autor;
+    @Override
+    public String toString() {
+        return "Autor: " + getAutor() + "\nDestinatario: " + getDestinatario() + "\nMensagem: " + getTexto() + "\nNome do Arquivo: " + getNomeArquivo() + "\nCaminho do Arquivo: " + getCaminhoArquivo();
     }
 }

@@ -2,11 +2,17 @@ package Mensagens;
 
 import Usuarios.Usuario;
 
-public class Mensagem {
+public abstract class Mensagem {
 
     private String texto;
     private Usuario destinatario;
     private Usuario autor;
+
+    public Mensagem(String texto, Usuario destinatario, Usuario autor) {
+        this.texto = texto;
+        this.destinatario = destinatario;
+        this.autor = autor;
+    }
 
     public String getTexto() {
         return texto;
